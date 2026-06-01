@@ -1,0 +1,187 @@
+{
+  "buildManifest": {
+    "serverBundles": {
+      "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0": {
+        "id": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+        "file": "build/server/nodejs_eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    },
+    "routeIdToServerBundleId": {
+      "routes/home": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/about": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/projects": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/project-details": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/profile": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "app/root.tsx",
+        "path": "",
+        "config": {}
+      },
+      "routes/home": {
+        "id": "routes/home",
+        "parentId": "root",
+        "file": "app/routes/home.tsx",
+        "index": true,
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/about": {
+        "id": "routes/about",
+        "parentId": "root",
+        "file": "app/routes/about.tsx",
+        "path": "about",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "layouts/dashboard": {
+        "id": "layouts/dashboard",
+        "parentId": "root",
+        "file": "app/layouts/dashboard.tsx",
+        "config": {}
+      },
+      "routes/projects": {
+        "id": "routes/projects",
+        "parentId": "layouts/dashboard",
+        "file": "app/routes/projects.tsx",
+        "path": "app/projects",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/project-details": {
+        "id": "routes/project-details",
+        "parentId": "layouts/dashboard",
+        "file": "app/routes/project-details.tsx",
+        "path": "app/projects/:id",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/profile": {
+        "id": "routes/profile",
+        "parentId": "layouts/dashboard",
+        "file": "app/routes/profile.tsx",
+        "path": "app/profile",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    }
+  },
+  "reactRouterConfig": {
+    "appDirectory": "/Users/shreyash/Projects/React-Router/Framework-Mode/app",
+    "basename": "/",
+    "buildDirectory": "/Users/shreyash/Projects/React-Router/Framework-Mode/build",
+    "future": {
+      "unstable_optimizeDeps": false,
+      "v8_passThroughRequests": true,
+      "v8_trailingSlashAwareDataRequests": true,
+      "unstable_previewServerPrerendering": false,
+      "v8_middleware": true,
+      "v8_splitRouteModules": true,
+      "v8_viteEnvironmentApi": true
+    },
+    "prerender": [
+      "/",
+      "/about"
+    ],
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "root.tsx",
+        "path": ""
+      },
+      "routes/home": {
+        "id": "routes/home",
+        "parentId": "root",
+        "file": "routes/home.tsx",
+        "index": true
+      },
+      "routes/about": {
+        "id": "routes/about",
+        "parentId": "root",
+        "file": "routes/about.tsx",
+        "path": "about"
+      },
+      "layouts/dashboard": {
+        "id": "layouts/dashboard",
+        "parentId": "root",
+        "file": "layouts/dashboard.tsx"
+      },
+      "routes/projects": {
+        "id": "routes/projects",
+        "parentId": "layouts/dashboard",
+        "file": "routes/projects.tsx",
+        "path": "app/projects"
+      },
+      "routes/project-details": {
+        "id": "routes/project-details",
+        "parentId": "layouts/dashboard",
+        "file": "routes/project-details.tsx",
+        "path": "app/projects/:id"
+      },
+      "routes/profile": {
+        "id": "routes/profile",
+        "parentId": "layouts/dashboard",
+        "file": "routes/profile.tsx",
+        "path": "app/profile"
+      }
+    },
+    "routeDiscovery": {
+      "mode": "lazy",
+      "manifestPath": "/__manifest"
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": true,
+    "subResourceIntegrity": false,
+    "allowedActionOrigins": false,
+    "unstable_routeConfig": [
+      {
+        "id": "root",
+        "path": "",
+        "file": "root.tsx",
+        "children": [
+          {
+            "file": "routes/home.tsx",
+            "index": true
+          },
+          {
+            "file": "routes/about.tsx",
+            "path": "about"
+          },
+          {
+            "file": "layouts/dashboard.tsx",
+            "children": [
+              {
+                "file": "routes/projects.tsx",
+                "path": "app/projects"
+              },
+              {
+                "file": "routes/project-details.tsx",
+                "path": "app/projects/:id"
+              },
+              {
+                "file": "routes/profile.tsx",
+                "path": "app/profile"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}
